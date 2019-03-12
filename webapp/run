@@ -1,0 +1,13 @@
+#!/bin/bash
+mongod --dbpath db/SeeVDB &
+export FLASK_APP=.
+export FLASK_ENV=development
+flask run
+trap ctrl_c INT
+
+function ctrl_c() {
+        echo "** Trapped CTRL-C"
+}
+
+kill $(pgrep flask)
+kill $(pgrep mongo)

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %} - See V</title>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='mystyles.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='multi-select.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+  integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+  crossorigin="anonymous"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='jquery.multi-select.js') }}"
+></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+$(document).ready(function() {
+
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function() {
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+
+  });
+});
+</script>
+{% block additionalFiles %} {% endblock %}
+<br />
+<section>
+  <nav
+    class="navbar is-fixed-top has-shadow"
+    role="navigation"
+    aria-label="main navigation"
+  >
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ url_for('home.home') }}">
+        <img src="{{ url_for('static', filename='jjj-small2.jpg') }}" alt="SeeV Logo"/>
+      </a>
+
+      <a
+        role="button"
+        class="navbar-burger burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasicExample"
+        style="height:80px;"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="{{ url_for('home.home') }}">
+          Home
+        </a>
+        {% if not session['client_flag']%}
+        <a class="navbar-item" href="{{ url_for('joblist.joblist') }}">
+          Job Listings
+        </a>
+        {% endif %}
+        {% if g.user %}
+        {% if session['client_flag'] %}
+        <a class="navbar-item" href="{{ url_for('clientJobs.clientJobs') }}">
+          My Managed Jobs
+        </a>
+        {% else %}
+        <a
+          class="navbar-item"
+          href="{{ url_for('applicationlist.applicationlist') }}"
+        >
+          My Applications
+        </a>
+        {% endif %}
+         {% endif %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              About Us
+            </a>
+            <a class="navbar-item">
+              About the Client
+            </a>
+            <a class="navbar-item">
+              Contact
+            </a>
+            <hr class="navbar-divider" />
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            {% if g.user %}
+                {% if session['client_flag'] %}
+                <a
+                  class="button is-secondary"
+                  href="{{ url_for('clientJobs.clientJobs') }}"
+                >
+                  <strong>{{ g.user["Username"] }}</strong>
+                </a>
+                {% else %}
+                <a
+                  class="button is-secondary"
+                  href="{{ url_for('details.details') }}"
+                >
+                  <strong>{{ g.user["Username"] }}</strong>
+                </a>
+                {% endif %}
+            <a class="button is-primary" href="{{ url_for('login.logout') }}">
+              <strong>Logout</strong>
+            </a>
+            {% else %}
+            <a class="button is-primary" href="{{ url_for('login.auth') }}">
+              <strong>Login or Register</strong>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+<section>
+  <div class="container" style="width:50%">
+    {% if session['notifications'] %}
+    <br />
+    <br />
+    <br />
+
+    {% for notification in session['notifications'] %} {% if
+    notification["type"] == "error" %}
+    <div class="notification is-warning">
+      {{ notification["message"] }}
+    </div>
+    {% else %}
+    <div class="notification is-success">
+      {{ notification["message"] }}
+    </div>
+    {% endif %} {% endfor %}
+    <div style="display: none">{{ session.pop("notifications", None) }}</div>
+    {% else %} <br />
+    <br />
+    {% endif %}
+  </div>
+</section>
+<header>
+  {% block header %}{% endblock %}
+</header>
+<section lang="en">
+{% block content %}{% endblock %}
+</section>
+<br /><br />
+<section
+  style="position:static; width:100%; bottom:0; background-color: #98A2AF; padding-left: 1rem; padding-top: 1rem;"
+>
+  <strong>See V</strong> was created by a team of second-year programmers at the
+  <a href="https://warwick.ac.uk/">University of Warwick</a>.
+
+  <br /><br />
+</section>

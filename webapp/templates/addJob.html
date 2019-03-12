@@ -1,0 +1,301 @@
+
+
+{% extends 'base.html' %} {% block title %} Add Job {% endblock %}
+{% block header %}
+<script
+  src="{{ url_for('static', filename='addJob.js') }}"
+  type="text/javascript"
+></script>
+{% endblock %}
+{% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='multi-select.css') }}"
+  />
+<link
+  rel="javascript"
+  href="{{ url_for('static', filename='jquery.multiselect.js') }}"
+  />
+<section>
+  <br>
+  <h1 class="is-size-3 pl3">
+    Post a Job Role
+  </h1>
+  <div class="box addJobBox">
+    <div class="container existingJobButton">
+        <a class="button is-info mla" href="{{ url_for('addExistingJob.addExistingJob') }}">
+          <strong>Use Existing Job Template</strong>
+        </a>
+    </div>
+  <form method="post" id="postJob">
+    <div class="field">
+      <input type="hidden" id="employeeID" name="employeeID" value='{{ session.get('user_id') }}'>
+    </div>
+    <div class="field">
+      Job Title:
+      <p class="control">
+        <input class="input" type="text" placeholder="Job Title" name="title" required>
+      </p>
+    </div>
+    <div class="field">
+      Job Description:
+      <p class="control">
+        <textarea class="textarea" placeholder="Job Description" name="description"></textarea>
+      </p>
+    </div>
+    <div class="field">
+      Job Availability:
+      <div class="box mb1">
+        <div class="control">
+          Date Created:
+          <script>
+            document.write(new Date().toLocaleDateString());
+          </script>
+          <input type="hidden" id="created" name="created" value="">
+        </div>
+        <div class="control">
+          End of Listing:
+          <input type="date" id="end" name="end" value="" class="is-size-6">
+        </div>
+      </div>
+      <div class="control mt1">
+        How many applicants would you like to send to interview?
+        <input
+          type="number"
+          id="applicantNo"
+          class="input"
+          placeholder="Number Of Candidates"
+          min = 1
+          name="applicantNo"
+          required
+          />
+      </div>
+    </div>
+    <hr>
+    <div class="columns">
+      <div class="column">
+        Choose Universities to favour:
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <select multiple="multiple" name="university[]" id="university">
+                {% for university in dropDowns["University Attended"]%}
+                <option value="{{ university }}" name="university[]">{{ university }}</option>
+                {% endfor %}
+              </select>
+              <script>
+                $('#university').multiSelect();
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        Choose Degrees to favour:
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <select multiple="multiple" name="degree[]" id="degree">
+                {% for degree in dropDowns["Degree Qualification"]%}
+                <option value="{{ degree }}">{{ degree }}</option>
+                {% endfor %}
+              </select>
+              <script>
+                $('#degree').multiSelect()
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control mt10">
+      What minimum degree level should a candidate to have?<br>
+      <select name="level" id="level" class="input">
+        <option value="1st">1st</option>
+        <option value="2:1">2:1</option>
+        <option value="2:2">2:2</option>
+        <option value="3rd">3rd</option>
+        <option value="Pass">Pass</option>
+      </select>
+    </div>
+    <hr>
+    <div class="control mt1">
+    Past Employment:
+    <p>
+    <ul class="listDisc pl3">
+      <li>Please select the the previous job positions, and the length of time at each of those positions, that are preferred.</li>
+      <li>N.B: You may have to scroll to see every position you have added if you have many.</li>
+    </ul>
+    </p>
+    <div class="control mt1">
+      <div class="select is-fullwidth">
+        <select name="position" id="position" onchange='checkPosition(this.value);'>
+          <option hidden>Select a Position</option>
+          {% for position in dropDowns["Previous Employment Position"]%}
+          <option value="{{ position }}">{{ position }}</option>
+          {% endfor %}
+        </select>
+        <div class="field box addFieldBox" id="positionContainer"/>
+        </div>
+      </div>
+    </div>
+    <div class="control mt15">
+    <hr>
+    Languages Desired:
+    <p>
+    <ul class="listDisc pl3">
+      <li>Please select the ability desired in each desired language out of 10.</li>
+      <li>N.B: You may have to scroll to see every language you have added if you have many.</li>
+    </ul>
+    </p>
+    <div class="control mt1">
+      <div class="select is-fullwidth">
+        <select name="language" id="language" onchange='checkLanguage(this.value);'>
+          <option hidden>Select a Language</option>
+          {% for language in dropDowns["Languages Known"]%}
+          <option value="{{ language }}">{{ language }}</option>
+          {% endfor %}
+        </select>
+        <div class="field box addFieldBox" id="languageContainer"/>
+        </div>
+      </div>
+    </div>
+    <div class="control mt13">
+      Skills Desired:
+      <p>
+      <ul class="listDisc pl3">
+        <li>Please select the desired ability in each desired skill out of 10.</li>
+        <li>N.B: You may have to scroll to see every skill you have added if you have many.</li>
+      </ul>
+      </p>
+      <div class="control mt1">
+        <div class="select is-fullwidth">
+          <select name="skill" id="skill" onchange='checkSkill(this.value);'>
+            <option hidden>Select a Skill</option>
+            {% for skill in dropDowns["Skills"]%}
+            <option value="{{ skill }}">{{ skill }}</option>
+            {% endfor %}
+          </select>
+          <div class="field box addFieldBox" id="skillContainer"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="control mt13">
+      <div class="field mt1">
+        A-Level Qualifications:
+        <p>
+        <ul class="listDisc pl3">
+          <li>Please select the letter grade desired in each A-Level, i.e. A*, A-E, U etc.</li>
+          <li>N.B: You may have to scroll to see every A-Level you have added if you have many.</li>
+        </ul>
+        </p>
+        <div class="control mt1">
+          <div class="select is-fullwidth">
+            <select name="aLevel" id="aLevel" onchange='checkALevel(this.value);'>
+              <option hidden>Select an A-Level</option>
+              {% for aLevel in dropDowns["A-Level Qualifications"]%}
+              <option value="{{ aLevel }}">{{ aLevel }}</option>
+              {% endfor %}
+            </select>
+            <div class="field box addFieldBox" id="aLevelContainer"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control mt13">
+        Test Questions:
+        <p class="pb02">
+            <ul class="listDisc pl3">
+                <li> There are four types of questions available. </li>
+                <li> Please select a question difficulty between 1 and 4 for each category. </li>
+            </ul>
+        </p>
+        <div class="box mt1">
+          <div class="field">
+            <ul>
+              <li>
+                <div class="control">
+                  Literacy:
+                  <div class="select">
+                    <select name="literacy" id="literacy" class="nudgeUp" required>
+                      <option value="1">1</option>
+                      <!--
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="control">
+                  Numeracy:
+                  <div class="select">
+                    <select name="numeracy" id="numeracy" class="nudgeUp" required>
+                      <option value="1">1</option>
+                      <!--
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="control">
+                  Abstract Reasoning:
+                  <div class="select">
+                    <select name="abstractReasoning" id="abstractReasoning" class="nudgeUp" required>
+                      <option value="1">1</option>
+                      <!--
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="control">
+                  Situational Judgement:
+                  <div class="select">
+                    <select name="situationalJudgement" id="situationalJudgement" class="nudgeUp" required>
+                      <option value="1">1</option>
+                      <!--
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <button
+          id="addJob"
+          class="button is-dark is-fullwidth mt1 bottomButton"
+          type="submit"
+          >
+        Post Job Role
+        </button>
+      </div>
+     <script>
+         $('#postJob').submit(function(e) {
+           $('#addJob').addClass("is-loading");
+           $('#addJob').contentWindow.location.reload(true);
+           return true;
+         });
+      </script>
+  </form>
+  </div>
+</section>
+{% endblock %}

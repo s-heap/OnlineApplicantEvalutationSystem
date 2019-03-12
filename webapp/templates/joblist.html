@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block title %} Job Liststings {% endblock %} {% block
+content %}
+<br />
+<h1 style="font-size: 2em; padding-left: 3rem;">
+  Roles currently available for application:
+</h1>
+{% if jobs|length > 0 %}
+<div
+  class="box"
+  style="padding: 1.5rem; width: 75%; margin: auto; margin-top: 1rem; margin-bottom: 2rem; background: #FBEF95;"
+>
+  {% for job in jobs %}
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        {{ job["Job Name"] }}
+      </p>
+      <a href="#" class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </a>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{ job["Job Description"] }}
+        <br>
+        <br>
+        <h4>Posted: {{ job["Availability"]["Date Created"].strftime("%d/%m/%y") }}</h4>
+        <h4>Closes: {{ job["Availability"]["End Date"].strftime("%d/%m/%y") }}</h4>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <p class="card-footer-item">
+        {% if job["Application"] %}
+        <span id="{{ job["Application"] }}">
+          Application Sent
+        </span>
+        {% else %}
+        <span>
+          <a class="navbar-item" href="{{ url_for('apply.apply', id=job['_id'], name=job['Job Name'])}}">Apply</a>
+        </span>
+        {% endif %}
+      </p>
+    </footer>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="column is-6 is-offset-3 has-text-centered mt1">
+    There are currently no active job postings. Please return later to try again.
+</div>
+{% endif %}
+{% endblock %}

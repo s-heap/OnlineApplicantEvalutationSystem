@@ -1,0 +1,195 @@
+{% extends 'base.html' %} {% block title %} Job Details {% endblock %} {% block
+content %}
+<section>
+  <div class="container" style="padding: 1.5rem; margin: auto; width:75%;">
+    <div class="card" style="overflow:hidden">
+      <div class="card-content">
+        <figure
+          class="image"
+          style="float: left; padding-bottom: 1.5rem; margin-right: 1.5rem; display:block;"
+        >
+          <img
+            src="{{ url_for('static', filename='user-tie.png') }}"
+            height="150px"
+            width="150px"
+            alt="An icon of a person with a tie"
+          />
+        </figure>
+      </div>
+      <header class="card-header">
+        <p
+          class="card-header-title"
+          style="background: #98A2AF; text-color: #ffffff; float:right;"
+        >
+          <strong>{{ job["Job Name"] }}</strong>
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content mb" style="text-align:left; word-wrap:word-break;">
+          {{ job["Job Description"] }}
+        <div class="content"  id ="jDCC" style="padding-bottom: 1rem; margin-top:6rem; display:block">
+          <ul class="listDisc pl2">
+            <li>
+              Posted on
+              {{ job["Availability"]["Date Created"].strftime("%d/%m/%y") }}
+            </li>
+            <li>
+              It has received
+              <strong>{{ job["Application Count"] }}</strong> application(s) so
+              far
+            </li>
+            {% if job["Closed"] %}
+            <li>Applications for this job have now closed</li>
+            {% else %}
+            <li>
+              Applications are due before
+              {{ job["Availability"]["End Date"].strftime("%d/%m/%y") }}
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+<section>
+  <div class="container" style="padding: 1.5rem; margin: auto; width:75%">
+    <div
+      class="box"
+      style="border: solid; border-color: #FBEF95; border-width:2px;"
+    >
+      <div class="card-content">
+        {% if job["Latest Shortlist"] %} {% if job["Closed"] %}
+        <form method="post" id="formLoading" action="{{ url_for('jobDetails.feedback') }}">
+          <u class="is-size-5"
+            >These are the candidates we suggest should proceed to interview:</u
+          ><br />
+          Please rank the quality of each suggested candidate's application out of 10 to
+          help train our system model.<br />
+          <ul class="pl2 mt1 listDisc">
+          {% else %}
+          <u class="is-size-5"
+            >These are the candidates we currently suggest should proceed to
+            interview:</u
+          ><br />
+          <ul class="pl2 mt1 listDisc">
+            {% endif %} {% for candidate in job["Latest Shortlist"] %} {% if
+            job["Closed"] %}
+            <li>
+            {{
+              candidate["CVData"]["Name"]
+            }}
+            <input
+              type="hidden"
+              name="candidateID[]"
+              value="{{ candidate['_id'] }}"
+            />
+            <div class="select nudgeUp">
+              <select name="classification[]">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <a class="button fieldButton" href="{{ url_for('applicationviewclient.applicationviewclient', cid=candidate['_id'], jid=job['_id']) }}">
+              Review {{ candidate["CVData"]["Name"] }}'s Application
+            </a>
+          </li>
+            {% else %}
+            <li>
+              {{ candidate["CVData"]["Name"] }}
+              <a class="button fieldButton" href="{{ url_for('applicationviewclient.applicationviewclient', cid=candidate['_id'], jid=job['_id']) }}">
+                View {{ candidate["CVData"]["Name"] }}'s Application
+              </a>
+            </li>
+            {% endif %}
+            <br />
+            {% endfor %}
+          </ul>
+          <br />
+          {% if job["Closed"] %}
+          <input type="hidden" name="jobID" value="{{ job['_id'] }}" />
+          <input type="hidden" name="jobName" value="{{ job['Job Name'] }}" />
+          <br />
+          <div class="has-text-centered">
+          <button
+            class="button is-dark"
+            id="submitLoading"
+            style="font-weight: bold;"
+            type="submit"
+          />
+            Submit Feedback
+          </button>
+        </div>
+        </form>
+        {% else %}
+        <form method="post" style="text-align: center;" id="formLoading">
+          <button
+            class="button is-dark"
+            id="submitLoading"
+            style="font-weight: bold;"
+            type="submit"
+            name="{{ job['_id'] }}"
+          />
+            Generate New Candidate Shortlist
+          </button
+        </form>
+        {% endif %} {% else %} {% if job["Closed"] %}
+        <p class="has-text-centered">
+          This job recieved no applications before its close date.
+        </p>
+        <br />
+        <form
+          method="post"
+          action="{{ url_for('jobDetails.feedback') }}"
+          style="text-align: center;"
+          id="formLoading"
+        >
+          <input type="hidden" name="jobID" value="{{ job['_id'] }}" />
+          <button
+            class="button is-dark"
+            id="submitLoading"
+            style="font-weight: bold; text-align: center;"
+            type="submit"
+          />
+            Close Job
+          </button>
+        </form>
+
+        {% else %}
+        <form method="post" id="formLoading" style="text-align: center;">
+          No candidate shortlist has been generated, to generate one, click
+          below.
+          <br /><br />
+          <button
+            class="button is-dark"
+            id="submitLoading"
+            style="font-weight: bold;"
+            href="{{ url_for('jobDetails.jobDetails', id=job['_id'])}}"
+            type="submit"
+            name="{{ job['_id'] }}"
+          />
+            Create Candidate Shortlist
+          </button>
+        </form>
+        {% endif %} {% endif %}
+      </div>
+    </div>
+  </div>
+  <script>
+      $('#formLoading').submit(function(e) {
+        $('#submitLoading').addClass("is-loading");
+        $('#submitLoading').contentWindow.location.reload(true);
+        return true;
+      });
+   </script>
+</section>
+{% endblock %}

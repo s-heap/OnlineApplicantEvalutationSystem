@@ -1,0 +1,155 @@
+{% extends 'base.html' %} {% block title %} Add Job {% endblock %}
+{% block header %}
+<script
+  src="{{ url_for('static', filename='addJob.js') }}"
+  type="text/javascript"
+></script>
+{% endblock %}
+{% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='multi-select.css') }}"
+  />
+<link
+  rel="javascript"
+  href="{{ url_for('static', filename='jquery.multiselect.js') }}"
+  />
+<section>
+  <br>
+  <h1 class="is-size-3 pl3">
+    Post a Job Role
+  </h1>
+  <div class="box addJobBox">
+  <form method="post" id="formLoading" onsubmit="convertExperience()">
+    <div class="control mt0">
+      What existing job would you like to post?<br>
+      <select name="title" class="input">
+        {% for job in dropDowns["Existing Jobs"]%}
+        <option value="{{ job }}">{{ job }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <input type="hidden" id="employeeID" name="employeeID" value='{{ session.get('user_id') }}'>
+    </div>
+    <div class="field">
+      Job Availability:
+      <div class="box mb1">
+        <div class="control">
+          Date Created:
+          <script>
+            document.write(new Date().toLocaleDateString());
+          </script>
+          <input type="hidden" id="created" name="created" value="">
+        </div>
+        <div class="control">
+          End of Listing:
+          <input type="date" id="end" name="end" value="" class="is-size-6">
+        </div>
+      </div>
+      <div class="control mt1">
+        How many applicants would you like to send to interview?
+        <input
+          type="number"
+          id="applicantNo"
+          class="input"
+          placeholder="Number Of Candidates"
+          min = 1
+          name="applicantNo"
+          />
+      </div>
+      <div class="control mt1">
+        Test Questions:
+        <p class="pb02">
+            <ul class="listDisc pl3">
+                <li> There are four types of questions available. </li>
+                <li> Please select a question difficulty between 1 and 4 for each category. </li>
+            </ul>
+        </p>
+        <div class="box mt1">
+          <div class="field">
+            <ul>
+              <li>
+                <div class="control">
+                  Literacy:
+                  <div class="select">
+                    <select name="literacy" id="literacy" class="nudgeUp" required>
+                      <option value="1">1</option>
+                      <!--
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="control">
+                  Numeracy:
+                  <div class="select">
+                    <select name="numeracy" id="numeracy" class="nudgeUp" required>
+                      <option value="1">1</option>
+                      <!--
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="control">
+                  Abstract Reasoning:
+                  <div class="select">
+                    <select name="abstractReasoning" id="abstractReasoning" class="nudgeUp" required>
+                      <option value="1">1</option>
+                      <!--
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="control">
+                  Situational Judgement:
+                  <div class="select">
+                    <select name="situationalJudgement" id="situationalJudgement" class="nudgeUp" required>
+                      <option value="1">1</option>
+                      <!--
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="control" >
+        <button
+          id="submitLoading"
+          class="button is-dark is-fullwidth mt1 bottomButton"
+          type="submit"
+          >
+          Post Job Role
+        </button>
+      </div>
+      <script>
+          $('#formLoading').submit(function(e) {
+            $('#submitLoading').addClass("is-loading");
+            $('#submitLoading').contentWindow.location.reload(true);
+            return true;
+          });
+       </script>
+  </form>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,235 @@
+[
+   {
+            "Model CV" : {
+         "Approved Degree" : [
+            "Computer Science, BSc",
+            "Computer Science, MEng",
+            "Computer Science, MSc",
+            "Computer Systems Engineering, BSc",
+            "Computer Systems Engineering, MEng",
+            "Computer and Management Sciences, BSc",
+            "Data Analytics, MSc",
+            "Data Science, BSc",
+            "Discrete Mathematics, BSc",
+            "Discrete Mathematics, MEng",
+            "Electrical and Electronic Engineering (MEng)",
+            "Electronic Engineering, MEng",
+            "Engineering Business Management, BA",
+            "Engineering, BEng",
+            "Mathematics and Philosophy, BA",
+            "Mathematics and Physics, BSc",
+            "Mathematics and Physics, MMathPhys",
+            "Mathematics and Statistics, BSc",
+            "Mathematics and Statistics, MMathStat",
+            "Mathematics, MMath",
+            "Philosophy and Literature, BA",
+            "Philosophy with Psychology, BA",
+            "Philosophy, Politics and Economics, BA",
+            "Statistics, BSc",
+            "Systems Engineering, BEng",
+            "Systems Engineering, MEng"
+         ],
+         "Skills" : [
+            {
+               "Skill" : "German",
+               "Expertise" : "3"
+            },
+            {
+               "Skill" : "Team work",
+               "Expertise" : "6"
+            }
+         ],
+         "A-Level Qualifications" : [
+            {
+               "Grade" : "D",
+               "Subject" : "Applied Art and Design "
+            }
+         ],
+         "Degree Level" : "2:1",
+         "Approved Universities" : [
+            "Carnegie Mellon University",
+            "Columbia University",
+            "Cornell University",
+            "Duke University",
+            "Durham University",
+            "Paris Sciences & Lettres – PSL University",
+            "Peking University",
+            "Pennsylvania State University",
+            "Princeton University",
+            "Queen Mary University of London",
+            "Queen’s University Belfast",
+            "Seoul National University",
+            "Stanford University\tUnited States",
+            "Swiss Federal Institute of Technology Zurich",
+            "The University of Tokyo",
+            "Tsinghua University",
+            "University of Manchester",
+            "University of Melbourne",
+            "University of Michigan"
+         ],
+         "Previous Employment" : [
+            {
+               "Position" : "Senior Software Developer",
+               "Length of Employment" : "9 months"
+            },
+            {
+               "Position" : "Web Developer",
+               "Length of Employment" : "1 year"
+            }
+         ],
+         "Languages Known" : [
+            {
+               "Expertise" : "10",
+               "Language" : "PhP"
+            },
+            {
+               "Expertise" : "7",
+               "Language" : "HTML"
+            },
+            {
+               "Expertise" : "5",
+               "Language" : "JSON"
+            },
+            {
+               "Expertise" : "6",
+               "Language" : "JavaScript"
+            }
+         ]
+      },
+      "Question Difficulty" : {
+         "Numeracy" : [
+            "1"
+         ],
+         "Abstract Reasoning" : [
+            "1"
+         ],
+         "Situational Awareness" : [
+            "1"
+         ],
+         "Literacy" : [
+            "1"
+         ]
+      },
+      "Applicants Required" : "10",
+      "Job Name" : "PHPDeveloper",
+      "Job Description" : "PHP coder please",
+      "Availability":{
+         "Date Created":"2019-2-16 0:0:0.0",
+         "End Date":"2019-3-16 0:0:0.0",
+         "Report Frequency":"5"
+      }
+   },
+   {
+      "Model CV" : {
+      "Approved Degree" : [
+         "Computer Science, BSc",
+         "Computer Science, MEng",
+         "Computer Science, MSc",
+         "Computer Systems Engineering, BSc",
+         "Computer Systems Engineering, MEng",
+         "Computer and Management Sciences, BSc",
+         "Data Analytics, MSc",
+         "Data Science, BSc",
+         "Discrete Mathematics, BSc",
+         "Discrete Mathematics, MEng",
+         "Electrical and Electronic Engineering (MEng)",
+         "Electronic Engineering, MEng",
+         "Mathematics and Physics, MMathPhys",
+         "Mathematics and Statistics, BSc",
+         "Mathematics and Statistics, MMathStat",
+         "Mathematics, MMath",
+         "Philosophy and Literature, BA",
+         "Philosophy with Psychology, BA",
+         "Philosophy, Politics and Economics, BA",
+         "Statistics, BSc",
+         "Systems Engineering, BEng",
+         "Systems Engineering, MEng"
+      ],
+      "Skills" : [
+         {
+            "Skill" : "French",
+            "Expertise" : "5"
+         },
+         {
+            "Skill" : "Team work",
+            "Expertise" : "6"
+         }
+      ],
+      "A-Level Qualifications" : [
+         {
+            "Grade" : "D",
+            "Subject" : "Applied Art and Design "
+         }
+      ],
+      "Degree Level" : "2:2",
+      "Approved Universities" : [
+         "Carnegie Mellon University",
+         "Columbia University",
+         "Cornell University",
+         "Duke University",
+         "Durham University",
+         "Paris Sciences & Lettres – PSL University",
+         "Peking University",
+         "Pennsylvania State University",
+         "Princeton University",
+         "Queen Mary University of London",
+         "Queen’s University Belfast",
+         "Seoul National University",
+         "Stanford University\tUnited States",
+         "Swiss Federal Institute of Technology Zurich",
+         "University of Manchester",
+         "University of Melbourne",
+         "University of Michigan"
+      ],
+      "Previous Employment" : [
+         {
+            "Position" : "Senior Software Developer",
+            "Length of Employment" : "4 months"
+         },
+         {
+            "Position" : "Web Developer",
+            "Length of Employment" : "3 year"
+         }
+      ],
+      "Languages Known" : [
+         {
+            "Expertise" : "10",
+            "Language" : "Python"
+         },
+         {
+            "Expertise" : "5",
+            "Language" : "Java"
+         },
+         {
+            "Expertise" : "4",
+            "Language" : "Haskell"
+         },
+         {
+            "Expertise" : "6",
+            "Language" : "Scala"
+         }
+      ]
+   },
+   "Question Difficulty" : {
+      "Numeracy" : [
+         "1"
+      ],
+      "Abstract Reasoning" : [
+         "1"
+      ],
+      "Situational Awareness" : [
+         "1"
+      ],
+      "Literacy" : [
+         "1"
+      ]
+   },
+   "Applicants Required" : "15",
+   "Job Name" : "PythonDeveloper",
+   "Job Description" : "We are looking for a python coder please",
+   "Availability":{
+      "Date Created":"",
+      "End Date":""
+   }
+   }
+]

@@ -1,0 +1,814 @@
+[
+  {
+    "Field": "University Attended",
+    "Value": "Imperial College London",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Manchester",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Cambridge",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Newcastle University",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Durham University",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Warwick",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Glasgow",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Exeter",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Nottingham",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Bristol",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University College London",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Edinburgh",
+    "Score": "1"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Princeton University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Illinois at Urbana-Champaign",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of California",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Harvard University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Seoul National University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Carnegie Mellon University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Northwestern University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Sheffield",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Liverpool",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Toronto",
+    "Score": "0"
+  },
+  { "Field": "University Attended", "Value": "Duke University", "Score": "0" },
+  {
+    "Field": "University Attended",
+    "Value": "Swiss Federal Institute of Technology Zurich",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Paris Sciences & Lettres \u2013 PSL University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "California Institute of Technology",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "National University of Singapore",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Texas at Austin",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "London School of Economics and Political Science",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Cornell University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Tsinghua University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "The University of Tokyo",
+    "Score": "0"
+  },
+  { "Field": "University Attended", "Value": "Kyoto University", "Score": "0" },
+  {
+    "Field": "University Attended",
+    "Value": "Queen\u2019s University Belfast",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Southampton",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Queen Mary University of London",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of York",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Johns Hopkins University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Pennsylvania",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Columbia University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Melbourne",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Peking University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Lomonosov Moscow State University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "McGill University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Michigan",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Oxford",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Hong Kong",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Pennsylvania State University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Georgia Institute of Technology",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "New York University",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Wisconsin-Madison\t",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of British Columbia",
+    "Score": "0"
+  },
+  { "Field": "University Attended", "Value": "Yale University", "Score": "0" },
+  {
+    "Field": "University Attended",
+    "Value": "University of Birmingham",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Washington",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Cardiff University",
+    "Score": "0"
+  },
+  { "Field": "University Attended", "Value": "LMU Munich", "Score": "0" },
+  {
+    "Field": "University Attended",
+    "Value": "University of Leeds",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausann",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Massachusetts Institute of Technology",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "University of Chicago",
+    "Score": "0"
+  },
+  {
+    "Field": "University Attended",
+    "Value": "Stanford University\tUnited States",
+    "Score": "0"
+  },
+  { "Field": "Languages Known", "Value": "Assembly" },
+  { "Field": "Languages Known", "Value": "BASIC" },
+  { "Field": "Languages Known", "Value": "C++" },
+  { "Field": "Languages Known", "Value": "Executable UML" },
+  { "Field": "Languages Known", "Value": "HTML" },
+  { "Field": "Languages Known", "Value": "High Level Assembly" },
+  { "Field": "Languages Known", "Value": "LaTeX" },
+  { "Field": "Languages Known", "Value": "Mathematica" },
+  { "Field": "Languages Known", "Value": "Perl" },
+  { "Field": "Languages Known", "Value": "PostScript" },
+  { "Field": "Languages Known", "Value": "R" },
+  { "Field": "Languages Known", "Value": "Ruby" },
+  { "Field": "Languages Known", "Value": "Ruby-on-rails" },
+  { "Field": "Languages Known", "Value": "SQL" },
+  { "Field": "Languages Known", "Value": "TeX" },
+  { "Field": "Languages Known", "Value": "UNITY" },
+  { "Field": "Languages Known", "Value": "Visual Basic" },
+  { "Field": "Languages Known", "Value": "Visual Basic .NET" },
+  { "Field": "Languages Known", "Value": "C" },
+  { "Field": "Languages Known", "Value": "Fortran" },
+  { "Field": "Languages Known", "Value": "JSON" },
+  { "Field": "Languages Known", "Value": "Java" },
+  { "Field": "Languages Known", "Value": "MATLAB" },
+  { "Field": "Languages Known", "Value": "Prolog" },
+  { "Field": "Languages Known", "Value": "Python" },
+  { "Field": "Languages Known", "Value": "Scala" },
+  { "Field": "Languages Known", "Value": "C#" },
+  { "Field": "Languages Known", "Value": "Haskell" },
+  { "Field": "Languages Known", "Value": "Unix Shell" },
+  { "Field": "Languages Known", "Value": "Bash" },
+  { "Field": "Languages Known", "Value": "Lisp" },
+  { "Field": "Languages Known", "Value": "CUDA" },
+  { "Field": "Languages Known", "Value": "Visual J++" },
+  { "Field": "Languages Known", "Value": "COBOL" },
+  { "Field": "Languages Known", "Value": "JavaScript" },
+  { "Field": "Languages Known", "Value": "PhP" },
+  { "Field": "Languages Known", "Value": "Pascal" },
+  { "Field": "Languages Known", "Value": "Go!" },
+  { "Field": "Languages Known", "Value": "SPARK" },
+  { "Field": "Languages Known", "Value": "JScript" },
+  { "Field": "Languages Known", "Value": "Objective-C" },
+  { "Field": "Languages Known", "Value": "Batch File" },
+  { "Field": "Languages Known", "Value": "R++" },
+  { "Field": "Languages Known", "Value": "Hack" },
+  { "Field": "Languages Known", "Value": "MySQL" },
+  { "Field": "Skills", "Value": "Data Entry" },
+  { "Field": "Skills", "Value": "Chinese" },
+  { "Field": "Skills", "Value": "Flute" },
+  { "Field": "Skills", "Value": "Fundraising" },
+  { "Field": "Skills", "Value": "German" },
+  { "Field": "Skills", "Value": "Motivated" },
+  { "Field": "Skills", "Value": "Negotiating" },
+  { "Field": "Skills", "Value": "Text Editing" },
+  { "Field": "Skills", "Value": "Access" },
+  { "Field": "Skills", "Value": "French" },
+  { "Field": "Skills", "Value": "Google analytics" },
+  { "Field": "Skills", "Value": "Guitar" },
+  { "Field": "Skills", "Value": "Publisher" },
+  { "Field": "Skills", "Value": "Content Creation" },
+  { "Field": "Skills", "Value": "Time management" },
+  { "Field": "Skills", "Value": "Keynote" },
+  { "Field": "Skills", "Value": "Powerpoint" },
+  { "Field": "Skills", "Value": "Public Speaking" },
+  { "Field": "Skills", "Value": "Word" },
+  { "Field": "Skills", "Value": "Accounting" },
+  { "Field": "Skills", "Value": "Japanese" },
+  { "Field": "Skills", "Value": "Mentoring" },
+  { "Field": "Skills", "Value": "Networking" },
+  { "Field": "Skills", "Value": "Google Drive" },
+  { "Field": "Skills", "Value": "Search engine optimization" },
+  { "Field": "Skills", "Value": "Team work" },
+  { "Field": "Skills", "Value": "Video Editing" },
+  { "Field": "Skills", "Value": "Quality Assurance" },
+  { "Field": "Skills", "Value": "Skype" },
+  { "Field": "Skills", "Value": "Evernote" },
+  { "Field": "Skills", "Value": "Piano" },
+  { "Field": "Skills", "Value": "Slack" },
+  { "Field": "Skills", "Value": "Event Planning" },
+  { "Field": "Skills", "Value": "Backup management" },
+  { "Field": "Skills", "Value": "Conflict resolution" },
+  { "Field": "Skills", "Value": "Constructive criticism" },
+  { "Field": "Skills", "Value": "Marketing" },
+  { "Field": "Skills", "Value": "Smartphones" },
+  { "Field": "Skills", "Value": "Adobe Photoshop" },
+  { "Field": "Skills", "Value": "Italian" },
+  { "Field": "Skills", "Value": "Online collaboration" },
+  { "Field": "Skills", "Value": "Social media management" },
+  { "Field": "Skills", "Value": "Graphic Design" },
+  { "Field": "Skills", "Value": "Payroll" },
+  { "Field": "Skills", "Value": "Leadership" },
+  { "Field": "Skills", "Value": "Research" },
+  { "Field": "Skills", "Value": "Troubleshooting" },
+  { "Field": "Skills", "Value": "Excel" },
+  { "Field": "Skills", "Value": "Tablets" },
+  { "Field": "Degree Qualification", "Value": "Physics, MPhys" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Mathematics and Statistics, MMathStat"
+  },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Mathematics and Philosophy, BA"
+  },
+  { "Field": "Degree Qualification", "Value": "Law and Sociology, BA" },
+  { "Field": "Degree Qualification", "Value": "Law, BA" },
+  { "Field": "Degree Qualification", "Value": "Law with Humanities, BA" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Mathematics and Statistics, BSc"
+  },
+  { "Field": "Degree Qualification", "Value": "Discrete Mathematics, MEng" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Mathematics and Physics, MMathPhys"
+  },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Economic Studies and Global Sustainable Development, BA"
+  },
+  { "Field": "Degree Qualification", "Value": "Civil Engineering, MEng" },
+  { "Field": "Degree Qualification", "Value": "Mathematics, MMath" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Computer Systems Engineering, MEng"
+  },
+  { "Field": "Degree Qualification", "Value": "Mathematics and Physics, BSc" },
+  { "Field": "Degree Qualification", "Value": "Systems Engineering, BEng" },
+  { "Field": "Degree Qualification", "Value": "Management, BSc" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Economics, Politics and International Studies, BA"
+  },
+  { "Field": "Degree Qualification", "Value": "Data Analytics, MSc" },
+  { "Field": "Degree Qualification", "Value": "Data Science, BSc" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Electrical and Electronic Engineering (MEng)"
+  },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Physics with Business Studies, BSc"
+  },
+  { "Field": "Degree Qualification", "Value": "Physics, BSc" },
+  { "Field": "Degree Qualification", "Value": "Business Studies, BA" },
+  { "Field": "Degree Qualification", "Value": "Mathematics, BSc" },
+  { "Field": "Degree Qualification", "Value": "Chemistry, BSc" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Electrical and Electronic Engineering (BEng)"
+  },
+  { "Field": "Degree Qualification", "Value": "Law with Social Sciences, BA" },
+  { "Field": "Degree Qualification", "Value": "Electronic Engineering, MEng" },
+  { "Field": "Degree Qualification", "Value": "Engineering, MEng" },
+  { "Field": "Degree Qualification", "Value": "Systems Engineering, MEng" },
+  { "Field": "Degree Qualification", "Value": "Computer Science, MEng" },
+  { "Field": "Degree Qualification", "Value": "Computer Science, BSc" },
+  { "Field": "Degree Qualification", "Value": "Biochemistry, BSc" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Philosophy, Politics and Economics, BA"
+  },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Computer Systems Engineering, BSc"
+  },
+  { "Field": "Degree Qualification", "Value": "Law and Business Studies, BA" },
+  { "Field": "Degree Qualification", "Value": "Computer Science, MSc" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Philosophy with Psychology, BA"
+  },
+  { "Field": "Degree Qualification", "Value": "Economics, BA" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Computer and Management Sciences, BSc"
+  },
+  { "Field": "Degree Qualification", "Value": "Discrete Mathematics, BSc" },
+  { "Field": "Degree Qualification", "Value": "Biological Sciences, MBio" },
+  { "Field": "Degree Qualification", "Value": "Statistics, BSc" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Politics, Philosophy and Law, BA"
+  },
+  { "Field": "Degree Qualification", "Value": "MMORSE" },
+  { "Field": "Degree Qualification", "Value": "Philosophy and Literature, BA" },
+  { "Field": "Degree Qualification", "Value": "Biochemistry, MBio" },
+  { "Field": "Degree Qualification", "Value": "Politics, BA" },
+  { "Field": "Degree Qualification", "Value": "Biological Sciences, BSc" },
+  { "Field": "Degree Qualification", "Value": "Electronic Engineering, BEng" },
+  { "Field": "Degree Qualification", "Value": "Politics and Sociology, BA" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Engineering Business Management, BA"
+  },
+  { "Field": "Degree Qualification", "Value": "Engineering, BEng" },
+  { "Field": "Degree Qualification", "Value": "Chemistry, MChem" },
+  { "Field": "Degree Qualification", "Value": "Civil Engineering, BSc" },
+  {
+    "Field": "Degree Qualification",
+    "Value": "Economics and Industrial Organisation, BA"
+  },
+  { "Field": "Previous Employment Position", "Value": "Senior Manager" },
+  {
+    "Field": "Previous Employment Position",
+    "Value": "Senior Software Developer"
+  },
+  { "Field": "Previous Employment Position", "Value": "Systems Analyst" },
+  { "Field": "Previous Employment Position", "Value": "Technology Architect" },
+  { "Field": "Previous Employment Position", "Value": "Web Developer" },
+  { "Field": "Previous Employment Position", "Value": "Senior Architect" },
+  { "Field": "Previous Employment Position", "Value": "Software Tester" },
+  { "Field": "Previous Employment Position", "Value": "Consultant" },
+  { "Field": "Previous Employment Position", "Value": "Associate Manager" },
+  { "Field": "Previous Employment Position", "Value": "Project Lead" },
+  { "Field": "Previous Employment Position", "Value": "Project Manager" },
+  { "Field": "Previous Employment Position", "Value": "Module Lead" },
+  { "Field": "Previous Employment Position", "Value": "Software Developer" },
+  { "Field": "Previous Employment Position", "Value": "Technical Support" },
+  { "Field": "Previous Employment Position", "Value": "Technology Specialist" },
+  {
+    "Field": "Previous Employment Position",
+    "Value": "Senior Software Tester"
+  },
+  { "Field": "Previous Employment Position", "Value": "Senior Web Developer" },
+  { "Field": "Previous Employment Position", "Value": "Technical Lead" },
+  {
+    "Field": "Previous Employment Position",
+    "Value": "Senior Systems Analyst"
+  },
+  { "Field": "Previous Employment Position", "Value": "Senior Consultant" },
+  { "Field": "A-Level Qualifications", "Value": "Health and Social Care " },
+  { "Field": "A-Level Qualifications", "Value": "History of Art " },
+  { "Field": "A-Level Qualifications", "Value": "Human Biology " },
+  { "Field": "A-Level Qualifications", "Value": "Drama " },
+  { "Field": "A-Level Qualifications", "Value": "Economics and Business " },
+  { "Field": "A-Level Qualifications", "Value": "Technology and Design " },
+  { "Field": "A-Level Qualifications", "Value": "Food Technology " },
+  { "Field": "A-Level Qualifications", "Value": "Further Mathematics" },
+  { "Field": "A-Level Qualifications", "Value": "Mathematics" },
+  { "Field": "A-Level Qualifications", "Value": "Persian " },
+  { "Field": "A-Level Qualifications", "Value": "Fashion and Textiles " },
+  { "Field": "A-Level Qualifications", "Value": "Irish " },
+  { "Field": "A-Level Qualifications", "Value": "Japanese " },
+  { "Field": "A-Level Qualifications", "Value": "Philosophy " },
+  { "Field": "A-Level Qualifications", "Value": "Physical Education " },
+  { "Field": "A-Level Qualifications", "Value": "Communication and Culture " },
+  { "Field": "A-Level Qualifications", "Value": "Marine Science " },
+  { "Field": "A-Level Qualifications", "Value": "Photography" },
+  { "Field": "A-Level Qualifications", "Value": "Religious Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Design and Technology " },
+  { "Field": "A-Level Qualifications", "Value": "Travel and Tourism " },
+  { "Field": "A-Level Qualifications", "Value": "Chemistry" },
+  { "Field": "A-Level Qualifications", "Value": "Critical Thinking " },
+  { "Field": "A-Level Qualifications", "Value": "Russian " },
+  { "Field": "A-Level Qualifications", "Value": "Afrikaans " },
+  { "Field": "A-Level Qualifications", "Value": "Music " },
+  { "Field": "A-Level Qualifications", "Value": "Environmental Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Polish " },
+  { "Field": "A-Level Qualifications", "Value": "Food Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Science in Society " },
+  { "Field": "A-Level Qualifications", "Value": "Digital Technology " },
+  { "Field": "A-Level Qualifications", "Value": "German " },
+  { "Field": "A-Level Qualifications", "Value": "Product Design " },
+  { "Field": "A-Level Qualifications", "Value": "Statistics " },
+  { "Field": "A-Level Qualifications", "Value": "Archaeology " },
+  { "Field": "A-Level Qualifications", "Value": "Hindi " },
+  { "Field": "A-Level Qualifications", "Value": "Digital Media and Design " },
+  {
+    "Field": "A-Level Qualifications",
+    "Value": "English Language and Literature "
+  },
+  { "Field": "A-Level Qualifications", "Value": "Design and Textiles " },
+  { "Field": "A-Level Qualifications", "Value": "Humanities " },
+  { "Field": "A-Level Qualifications", "Value": "Performance Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Dutch " },
+  { "Field": "A-Level Qualifications", "Value": "Italian " },
+  { "Field": "A-Level Qualifications", "Value": "Portuguese " },
+  { "Field": "A-Level Qualifications", "Value": "Business Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Dance " },
+  { "Field": "A-Level Qualifications", "Value": "Environmental Science " },
+  { "Field": "A-Level Qualifications", "Value": "Information Technology " },
+  { "Field": "A-Level Qualifications", "Value": "Music Technology " },
+  {
+    "Field": "A-Level Qualifications",
+    "Value": "Software Systems Development "
+  },
+  { "Field": "A-Level Qualifications", "Value": "Tamil " },
+  { "Field": "A-Level Qualifications", "Value": "Art and Design " },
+  { "Field": "A-Level Qualifications", "Value": "Drama and Theatre " },
+  { "Field": "A-Level Qualifications", "Value": "French " },
+  { "Field": "A-Level Qualifications", "Value": "Law " },
+  { "Field": "A-Level Qualifications", "Value": "Media Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Thinking Skills " },
+  { "Field": "A-Level Qualifications", "Value": "Islamic Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Government and Politics " },
+  { "Field": "A-Level Qualifications", "Value": "Geology " },
+  { "Field": "A-Level Qualifications", "Value": "Bengali " },
+  { "Field": "A-Level Qualifications", "Value": "Moving Image Arts " },
+  { "Field": "A-Level Qualifications", "Value": "Greek " },
+  { "Field": "A-Level Qualifications", "Value": "Accounting" },
+  { "Field": "A-Level Qualifications", "Value": "Applied Business " },
+  { "Field": "A-Level Qualifications", "Value": "Environmental Technology " },
+  { "Field": "A-Level Qualifications", "Value": "Home Economics " },
+  {
+    "Field": "A-Level Qualifications",
+    "Value": "Professional Business Services "
+  },
+  { "Field": "A-Level Qualifications", "Value": "Divinity " },
+  { "Field": "A-Level Qualifications", "Value": "Quantitative Methods " },
+  { "Field": "A-Level Qualifications", "Value": "Biology" },
+  { "Field": "A-Level Qualifications", "Value": "Electronics " },
+  { "Field": "A-Level Qualifications", "Value": "English Literature " },
+  { "Field": "A-Level Qualifications", "Value": "Film Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Leisure Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Life and Health Sciences " },
+  { "Field": "A-Level Qualifications", "Value": "Applied Science " },
+  { "Field": "A-Level Qualifications", "Value": "Panjabi " },
+  { "Field": "A-Level Qualifications", "Value": "ICT " },
+  { "Field": "A-Level Qualifications", "Value": "Creative Writing " },
+  { "Field": "A-Level Qualifications", "Value": "Performing Arts " },
+  {
+    "Field": "A-Level Qualifications",
+    "Value": "Global Perspectives and Research "
+  },
+  { "Field": "A-Level Qualifications", "Value": "English Language " },
+  { "Field": "A-Level Qualifications", "Value": "Applied ICT " },
+  {
+    "Field": "A-Level Qualifications",
+    "Value": "Systems and Control Technology "
+  },
+  { "Field": "A-Level Qualifications", "Value": "Applied Art and Design " },
+  { "Field": "A-Level Qualifications", "Value": "Turkish" },
+  { "Field": "A-Level Qualifications", "Value": "Chinese " },
+  { "Field": "A-Level Qualifications", "Value": "Classical Greek " },
+  { "Field": "A-Level Qualifications", "Value": "Modern Languages " },
+  { "Field": "A-Level Qualifications", "Value": "General Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Engineering " },
+  { "Field": "A-Level Qualifications", "Value": "Psychology " },
+  { "Field": "A-Level Qualifications", "Value": "Modern Hebrew " },
+  { "Field": "A-Level Qualifications", "Value": "Gujarati " },
+  { "Field": "A-Level Qualifications", "Value": "Spanish " },
+  { "Field": "A-Level Qualifications", "Value": "Classical Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Geography " },
+  { "Field": "A-Level Qualifications", "Value": "Politics " },
+  { "Field": "A-Level Qualifications", "Value": "Hinduism " },
+  { "Field": "A-Level Qualifications", "Value": "Anthropology " },
+  { "Field": "A-Level Qualifications", "Value": "Business " },
+  { "Field": "A-Level Qualifications", "Value": "Classical Civilisation " },
+  { "Field": "A-Level Qualifications", "Value": "Citizenship Studies " },
+  { "Field": "A-Level Qualifications", "Value": "Journalism " },
+  { "Field": "A-Level Qualifications", "Value": "Sociology " },
+  { "Field": "A-Level Qualifications", "Value": "Ancient History " },
+  { "Field": "A-Level Qualifications", "Value": "Computing" },
+  { "Field": "A-Level Qualifications", "Value": "History " },
+  { "Field": "A-Level Qualifications", "Value": "Global Development " },
+  { "Field": "A-Level Qualifications", "Value": "Latin " },
+  { "Field": "A-Level Qualifications", "Value": "Physics" },
+  { "Field": "A-Level Qualifications", "Value": "Arabic " },
+  { "Field": "A-Level Qualifications", "Value": "Computer Science" },
+  { "Field": "A-Level Qualifications", "Value": "Sports Science " },
+  { "Field": "A-Level Qualifications", "Value": "Economics " },
+  { "Field": "A-Level Qualifications", "Value": "Nutrition and Food Science " },
+  { "Field": "Hobbies", "Value": "Competitive eating" },
+  { "Field": "Hobbies", "Value": "Hooping" },
+  { "Field": "Hobbies", "Value": "Juggling" },
+  { "Field": "Hobbies", "Value": "Karate" },
+  { "Field": "Hobbies", "Value": "Soapmaking" },
+  { "Field": "Hobbies", "Value": "Book restoration" },
+  { "Field": "Hobbies", "Value": "Cheerleading" },
+  { "Field": "Hobbies", "Value": "Flower collecting and pressing" },
+  { "Field": "Hobbies", "Value": "Gambling" },
+  { "Field": "Hobbies", "Value": "Moto GP" },
+  { "Field": "Hobbies", "Value": "Photography" },
+  { "Field": "Hobbies", "Value": "Polo" },
+  { "Field": "Hobbies", "Value": "Trains" },
+  { "Field": "Hobbies", "Value": "Whittling" },
+  { "Field": "Hobbies", "Value": "Music" },
+  { "Field": "Hobbies", "Value": "Body building" },
+  { "Field": "Hobbies", "Value": "Bridge" },
+  { "Field": "Hobbies", "Value": "Calligraphy" },
+  { "Field": "Hobbies", "Value": "Football" },
+  { "Field": "Hobbies", "Value": "Horse riding" },
+  { "Field": "Hobbies", "Value": "Jewelry making" },
+  { "Field": "Hobbies", "Value": "Parachuting" },
+  { "Field": "Hobbies", "Value": "Stamp collecting" },
+  { "Field": "Hobbies", "Value": "Baking" },
+  { "Field": "Hobbies", "Value": "Hiking" },
+  { "Field": "Hobbies", "Value": "Sculpting" },
+  { "Field": "Hobbies", "Value": "Sewing" },
+  { "Field": "Hobbies", "Value": "Blacksmithing" },
+  { "Field": "Hobbies", "Value": "Golf" },
+  { "Field": "Hobbies", "Value": "Skiing" },
+  { "Field": "Hobbies", "Value": "Knife throwing" },
+  { "Field": "Hobbies", "Value": "Kart racing" },
+  { "Field": "Hobbies", "Value": "Lotology" },
+  { "Field": "Hobbies", "Value": "Podcasting" },
+  { "Field": "Hobbies", "Value": "Singing" },
+  { "Field": "Hobbies", "Value": "Boxing" },
+  { "Field": "Hobbies", "Value": "Gongoozling" },
+  { "Field": "Hobbies", "Value": "Book collecting" },
+  { "Field": "Hobbies", "Value": "Chess" },
+  { "Field": "Hobbies", "Value": "Metal detecting" },
+  { "Field": "Hobbies", "Value": "Mycology" },
+  { "Field": "Hobbies", "Value": "Running" },
+  { "Field": "Hobbies", "Value": "Comedy" },
+  { "Field": "Hobbies", "Value": "Fencing" },
+  { "Field": "Hobbies", "Value": "Fossil hunting" },
+  { "Field": "Hobbies", "Value": "Geocaching" },
+  { "Field": "Hobbies", "Value": "Musicals" },
+  { "Field": "Hobbies", "Value": "Painting" },
+  { "Field": "Hobbies", "Value": "Weight lifting" },
+  { "Field": "Hobbies", "Value": "Animal fancy" },
+  { "Field": "Hobbies", "Value": "Cabaret" },
+  { "Field": "Hobbies", "Value": "Archery" },
+  { "Field": "Hobbies", "Value": "BASE jumping" },
+  { "Field": "Hobbies", "Value": "Speedcubing" },
+  { "Field": "Hobbies", "Value": "Gardening" },
+  { "Field": "Hobbies", "Value": "Leather working" },
+  { "Field": "Hobbies", "Value": "Roller blading" },
+  { "Field": "Hobbies", "Value": "Debate" },
+  { "Field": "Hobbies", "Value": "Netball" },
+  { "Field": "Hobbies", "Value": "Farming" },
+  { "Field": "Hobbies", "Value": "Phillumeny" },
+  { "Field": "Hobbies", "Value": "Beatboxing" },
+  { "Field": "Hobbies", "Value": "Beekeeping" },
+  { "Field": "Hobbies", "Value": "Glass blowing" },
+  { "Field": "Hobbies", "Value": "Mahjong" },
+  { "Field": "Hobbies", "Value": "Fire poi" },
+  { "Field": "Hobbies", "Value": "Improv" },
+  { "Field": "Hobbies", "Value": "Stand-up" },
+  { "Field": "Hobbies", "Value": "Acrobatics" },
+  { "Field": "Hobbies", "Value": "Board games" },
+  { "Field": "Hobbies", "Value": "Laser tag" },
+  { "Field": "Hobbies", "Value": "Origami" },
+  { "Field": "Hobbies", "Value": "Surfing" },
+  { "Field": "Hobbies", "Value": "Anime" },
+  { "Field": "Hobbies", "Value": "Brewing" },
+  { "Field": "Hobbies", "Value": "Cooking" },
+  { "Field": "Hobbies", "Value": "Dinosaurs" },
+  { "Field": "Hobbies", "Value": "Escape rooms" },
+  { "Field": "Hobbies", "Value": "Gymnastics" },
+  { "Field": "Hobbies", "Value": "Perfume" },
+  { "Field": "Hobbies", "Value": "Salsa" },
+  { "Field": "Hobbies", "Value": "Antiquing" },
+  { "Field": "Hobbies", "Value": "Coin collecting" },
+  { "Field": "Hobbies", "Value": "Drama" },
+  { "Field": "Hobbies", "Value": "Extreme sports" },
+  { "Field": "Hobbies", "Value": "Lacrosse" },
+  { "Field": "Hobbies", "Value": "Ballroom dancing" },
+  { "Field": "Hobbies", "Value": "Baton twirling" },
+  { "Field": "Hobbies", "Value": "Modelling" },
+  { "Field": "Hobbies", "Value": "Tabletop gaming" },
+  { "Field": "Hobbies", "Value": "Theatre" },
+  { "Field": "Hobbies", "Value": "Vintage art" },
+  { "Field": "Hobbies", "Value": "Darts" },
+  { "Field": "Hobbies", "Value": "Scrapbooking" },
+  { "Field": "Hobbies", "Value": "Streaming" },
+  { "Field": "Hobbies", "Value": "Tango" },
+  { "Field": "Hobbies", "Value": "Parkour" },
+  { "Field": "Hobbies", "Value": "Basketball" },
+  { "Field": "Hobbies", "Value": "Hockey" },
+  { "Field": "Hobbies", "Value": "Judo" },
+  { "Field": "Hobbies", "Value": "Yoga" },
+  { "Field": "Hobbies", "Value": "Airsoft" },
+  { "Field": "Hobbies", "Value": "Creative writing" },
+  { "Field": "Hobbies", "Value": "Insect collecting" },
+  { "Field": "Hobbies", "Value": "Cars" },
+  { "Field": "Hobbies", "Value": "Knitting" },
+  { "Field": "Hobbies", "Value": "Tai chi" },
+  { "Field": "Hobbies", "Value": "Logic puzzles" },
+  { "Field": "Hobbies", "Value": "Foraging" },
+  { "Field": "Hobbies", "Value": "Flying disc" },
+  { "Field": "Hobbies", "Value": "Jeet kun do" },
+  { "Field": "Hobbies", "Value": "Woodworking" },
+  { "Field": "Hobbies", "Value": "Scuba diving" },
+  { "Field": "Hobbies", "Value": "Ice skating" },
+  { "Field": "Hobbies", "Value": "Sword swallowing" },
+  { "Field": "Hobbies", "Value": "Athletics" },
+  { "Field": "Hobbies", "Value": "Embroidery" },
+  { "Field": "Hobbies", "Value": "Travelling" },
+  { "Field": "Hobbies", "Value": "Animation" },
+  { "Field": "Hobbies", "Value": "Crosswords" },
+  { "Field": "Hobbies", "Value": "Dog training" },
+  { "Field": "Hobbies", "Value": "Powerlifting" },
+  { "Field": "Hobbies", "Value": "Swimming" },
+  { "Field": "Hobbies", "Value": "Reading" },
+  { "Field": "Hobbies", "Value": "Magic" },
+  { "Field": "Hobbies", "Value": "Yo-yoing" },
+  { "Field": "Hobbies", "Value": "Break dancing" },
+  { "Field": "Hobbies", "Value": "Graffiti" },
+  { "Field": "Hobbies", "Value": "Gold prospecting" },
+  { "Field": "Hobbies", "Value": "3D printing" },
+  { "Field": "Hobbies", "Value": "Poetry" },
+  { "Field": "Hobbies", "Value": "Formula 1" },
+  { "Field": "Hobbies", "Value": "Skateboarding" },
+  { "Field": "Hobbies", "Value": "Shooting" },
+  { "Field": "Hobbies", "Value": "DIY" },
+  { "Field": "Hobbies", "Value": "Comic books" },
+  { "Field": "Hobbies", "Value": "Pottery" },
+  { "Field": "Hobbies", "Value": "Bird watching" },
+  { "Field": "Hobbies", "Value": "Rugby" },
+  { "Field": "Hobbies", "Value": "Tennis" },
+  { "Field": "Hobbies", "Value": "Gaming" },
+  { "Field": "Hobbies", "Value": "Seashell collecting" },
+  { "Field": "Hobbies", "Value": "Wrestling" },
+  { "Field": "Hobbies", "Value": "Cycling" },
+  { "Field": "Hobbies", "Value": "Astronomy" },
+  { "Field": "Hobbies", "Value": "Rock climbing" },
+  { "Field": "Hobbies", "Value": "Dowsing" },
+  { "Field": "Hobbies", "Value": "Ghost hunting" },
+  { "Field": "Hobbies", "Value": "Ghost hunting" },
+  { "Field": "Hobbies", "Value": "Movies" },
+  { "Field": "Hobbies", "Value": "Whale watching" },
+  { "Field": "Degree Level", "Value": "1st" },
+  { "Field": "Degree Level", "Value": "2:1" },
+  { "Field": "Degree Level", "Value": "2:2" },
+  { "Field": "Degree Level", "Value": "3rd" },
+  { "Field": "Degree Level", "Value": "Pass" }
+]

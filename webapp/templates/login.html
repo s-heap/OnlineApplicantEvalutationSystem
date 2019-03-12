@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block title %} Login {% endblock %} {% block content %}
+    <div class="columns" style="margin-top: 3rem; width:75%; margin-right:auto; margin-left:auto;">
+     <div class="column is-4" style="margin:auto;">
+         <figure class="image container" style="position:relative; left: 4rem; margin-right:auto;">
+           <img src="{{ url_for('static', filename='user-tie.png') }}" height=170px width=170px alt="An icon of a person with a tie">
+         </figure>
+         <div class="control" style="width:300px; text-align:center;">
+             <p class="heading is-large">Already have an account with us?</p>
+         </div>
+         <div class="box" style="padding-bottom:1.5rem; background: #98a2af; width:300px;">
+             <form method="post">
+                 <input type="hidden" name="in/up" value="in">
+                 <div class="field">
+                   <p class="control has-icons-left has-icons-right">
+                     <input class="input" type="text" name="username" placeholder="Username">
+                     <span class="icon is-small is-left">
+                       <i class="fas fa-user"></i>
+                     </span>
+                   </p>
+                 </div>
+                 <div class="field">
+                   <p class="control has-icons-left">
+                     <input class="input" type="password" name="password" placeholder="Password">
+                     <span class="icon is-small is-left">
+                       <i class="fas fa-lock"></i>
+                     </span>
+                   </p>
+                 </div>
+                 <div class="control">
+                     <button id="loginSubmit"class="button is-outlined is-fullwidth" type="submit" style="padding-bottom:1rem; background: #ffffff;">Log In</button>
+                 </div>
+             </form>
+         </div>
+     </div>
+    <div class="column is-4 is-offset-2" style="margin:auto;">
+        <figure class="image container" style="position:relative; left: 3.3rem; margin-right:auto;">
+          <img src="{{ url_for('static', filename='user-plus3.png') }}" height=150px width=250px alt="An icon of a person with a plus next them">
+        </figure>
+        <div class="control" style="width:300px; text-align:center;">
+            <p class="heading" style="padding-left:20px">Not been here before? Sign up now.</p>
+        </div>
+        <div class="box" style="padding-bottom:1.5rem; background: #fbef95; width:300px;">
+            <form method="post">
+                <input type="hidden" name="in/up" value="up">
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" name="username" placeholder="Username">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input class="input" type="password" name="password" placeholder="Password">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </p>
+                </div>
+                <div class="control">
+                    <button id="signUpSubmit"class="button is-outlined is-fullwidth" type="submit" style="padding-bottom:1rem; background: #ffffff;">Sign Up</button>
+                </div>
+          </form>
+        </div>
+    </div>
+    </div>
+<section style="width:100%;">
+    <div class="control" style="text-align:center;">
+        <div class="box" style="position:relative; bottom:-48px;">
+            Are you a client employee instead? Login for clients can be found
+            <a href="{{ url_for('loginClient.login') }}" style="color: #98a2af"><strong><u>here</u></strong>.</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,160 @@
+{% extends 'base.html' %} {% block title %} Perform Technical Test {% endblock
+%} {% block additionalFiles %}
+
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='codemirror.js') }}"
+></script>
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='codemirror.css') }}"
+/>
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='python/python.js') }}"
+></script>
+
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='codifffngtests.js') }}"
+></script>
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+{% endblock %} {% block content%}
+<br />
+<p
+  class="heading is-large"
+  style="text-align:center; font-size:2rem;
+    padding:1rem; float:bottom;"
+>
+  Coding Test
+</p>
+
+<div class="columns">
+  <div class="column" style="padding-left: 5%; display:flex;">
+    <div
+      class="box"
+      style="background:#ffffff; border:solid; border-width:0.2rem; border-color: #fbef95;"
+    >
+      <h5 class="title is-5">{{ question["Question Name"] }}</h5>
+      <p>{{ question["Question Text"] }}</p>
+      <p class="is-bold mt1">Example:</p>
+
+      {% for example in question['Example'] %}
+      <pre
+        class="prettyprint lang-python3 has-background-light mt1"
+        id="codeQuestionExample"
+      >
+            {{ example }}
+            </pre
+      >
+      <br />
+      {% endfor %}
+    </div>
+  </div>
+  <div class="column" style="padding-right:5%;">
+    <section class="box" style="background:#fbef95; overflow:hidden;">
+      <div class="container">
+        <p class="is-size-5" style="font-weight: bold">
+          Please present your solution to the task in this box.
+        </p>
+        <ul class="listDisc pl2 mb1 is-size-5">
+          <li>
+            Please note that on smaller screens, you may have to scroll to the
+            right to see the enitre box.
+          </li>
+        </ul>
+        <form method="post" id="codeForm">
+          <p>Test Language:</p>
+          <div class="select is-left">
+            <select id="language">
+              <option value="python3">Python3</option>
+              <option value="java">Java</option>
+              <option value="c">C</option>
+              <option value="pascal">Pascal</option>
+            </select>
+          </div>
+          <br /><br />
+          <textarea
+            class="codemirror-textarea"
+            name="preview-form-comment"
+            id="codes"
+            >{{ question["Init"] }}</textarea
+          >
+          <br />
+          <button id="submit" class="button is-secondary" style="float:right">
+            Submit Your Solution
+          </button>
+          <button id="run" class="button is-secondary ss">Run Your Code</button>
+        </form>
+        <br />
+        <p>Feedback:</p>
+        <div class="box" id="submitResponseBox">
+          <script>
+            {
+              {
+                feedback | safe;
+              }
+            }
+          </script>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<section></section>
+
+<script>
+  $(document).ready(function() {
+    var str = ` class Solution:
+        def permute(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: List[List[int]]
+            """
+            for i in range(math.factorial(nums)):
+                print(i) 
+        `;
+    var code = $(".codemirror-textarea")[0];
+    var editor = CodeMirror.fromTextArea(code, {
+      lineNumbers: true,
+      mode: "python"
+    });
+    // $(".ss").click(function(){
+    //     $(".ss").addClass("is-loading");
+    // });
+
+    $("#codeForm").submit(function(e) {
+      var form = $("#codes");
+      var url = form.attr("action");
+      var btn = $(document.activeElement).attr("id");
+      $.getJSON("{{ url_for('codingtest.run') }}", {}, function(data) {
+        $("#submitResponseBox").text(data.result);
+      });
+      $.ajax({
+        type: "POST",
+
+        data: form.serialize(), // serializes the form's elements.
+        success: function(data) {
+          $("#submitResponseBox").css("font-family", "Monospace");
+          if (btn == "submit") {
+            $("#submit").addClass("is-loading");
+            $("#submitResponseBox").text(
+              "Your code has been submitted, thank you."
+            );
+            setTimeout(function() {
+              window.location.href =
+                "{{ url_for('codingtest.submit_code', id=request.args.get('id')) }}"; //will redirect to your blog page (an ex: blog.html)
+            }, 2000); //will call the function after 2 secs.
+          }
+        }
+      });
+
+      e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
+  });
+</script>
+
+{% endblock %}

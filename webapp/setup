@@ -1,0 +1,10 @@
+#!/bin/bash
+pip3 install -r python3requirements.txt
+pip install -r python2requirements.txt
+brew tap mongodb/brew
+brew install mongodb
+python3-m venv venv
+virtualenv venv
+. venvbin/activate
+pip3 install Flask
+echo done

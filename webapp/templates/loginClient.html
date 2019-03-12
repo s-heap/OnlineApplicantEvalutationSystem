@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block title %} Client Login {% endblock %} {% block content %}
+<section>
+    <br>
+    <div class="columns" style="margin: auto;">
+        <div class="column is-offset-2 is-4">
+            <div class="box" style="padding-bottom:1.5rem; border: solid; border-radius: 1rem; border-color: #fbef95; display:block; height:100%">
+                <p style="padding-bottom:0.8rem; font-size:1.5rem;padding-top:1rem;padding-left:1rem; padding-right:1rem;"><strong>As a registered employee, you can perform the following functions:</strong></p>
+                <ul style="list-style-type:disc; padding-left:2rem; padding-right:2rem;">
+                    <li>Post a job listing</li>
+                    <li>View the current status of jobs you manage</li>
+                    <li>View individual candidate applications for a job you manage</li>
+                    <li>Receive updates as to the progress of jobs you manage</li>
+                </ul>
+            </div>
+        </div>
+        <div class="column is-4">
+            <figure class="image" style="width:50%;margin-left: auto; margin-right:auto;">
+              <img src="{{ url_for('static', filename='user-tie.png') }}" height=170px width=170px style="width:100%; margin-left: auto; margin-right:auto;" alt="An icon of a person with a tie">
+            </figure>
+            <p class="heading is-large" style="text-align: center;padding-bottom:2rem;">Are you a registered employee?</p>
+            <div class="box" style="padding-bottom:1.5rem; margin-top: -1.5rem; background: #98a2af">
+                <form method="post">
+                    <input type="hidden" name="in/up" value="in">
+                    <div class="field">
+                      <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" name="username" placeholder="Username">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-user"></i>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="field">
+                      <p class="control has-icons-left">
+                        <input class="input" type="password" name="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-lock"></i>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="control">
+                        <button id="loginSubmit"class="button is-outlined is-fullwidth" type="submit" style="padding-bottom:1rem; background: #ffffff;">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

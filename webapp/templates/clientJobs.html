@@ -1,0 +1,116 @@
+{% extends 'base.html' %} {% block title %} Managed Jobs {% endblock %} {% block
+content %}
+<section>
+    <div class="container" style="padding-top: 1.5rem; padding-bottom: 1.5rem;margin: auto; width:75%;">
+        <div class="card" style="overflow:hidden;">
+            <div class="card-content">
+                <figure class="image" style="float: left; padding-bottom: 1.5rem; margin-right: 1.5rem;">
+                  <img src="{{ url_for('static', filename='user-tie.png') }}" height=150px width=150px alt="An icon of a person with a tie">
+                </figure>
+            </div>
+            <header class="card-header">
+              <p class="card-header-title" style="background: #98A2AF; text-color: #ffffff; float:right;">
+                  <strong>{{ g.user["Username"] }}</strong>
+              </p>
+            </header>
+            <div class="card-content" id="cJCC" style="text-align:left;">
+                <nav class="level">
+                    <div class="level-left">
+                      <div class="content"style="padding-bottom: 1rem; text-align: justify">
+                        You are currently managing <strong>{{ jobData["Active"]|length }}</strong> jobs.
+                        <br />
+                        You have posted <strong>{{ jobData["Active"]|length + jobData["Inactive"]|length + jobData["Completed"]|length }}</strong> jobs historically.
+                      </div>
+                    </div>
+                    <div class="level-right">
+                        <div class="container" style="width:75%; float:right; padding-top:1rem; padding-bottom:1rem">
+                            <a class="button is-primary" href="{{ url_for('addJob.addJob') }}" style="margin-left: auto;">
+                              <strong>Post a New Job</strong>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h1 style="font-size: 2em; width: 75%; margin: auto;">
+      You currently manage these jobs:
+    </h1>
+    {% if jobData["Active"] %}
+    <div
+      class="box" id="yesJobs"
+      style="padding: 1.5rem; width: 75%; margin: auto; margin-top: 1rem; margin-bottom: 2rem; background: #FBEF95;"
+    >
+      {% for job in jobData["Active"] %}
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            {{ job["Job Name"] }}
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+              {{ job["Job Description"] }}
+              <br />
+              <br>
+              <h4>Posted: {{ job["Availability"]["Date Created"].strftime("%d/%m/%y") }}</h4>
+              <footer class="card-footer">
+                <p class="card-footer-item">
+                  <span>
+                    <a class="navbar-item" href="{{ url_for('jobDetails.jobDetails', id=job['_id']) }}">View Job</a>
+                  </span>
+                </p>
+              </footer>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+</section>
+<section>
+    <div class="container" style="width:75%; text-align: center; padding-top:1rem;">
+        You do not have any active job postings.
+    </div>
+    {% endif %}
+</section>
+
+{% if jobData["Inactive"] %}
+<section>
+    <h1 style="font-size: 2em; width: 75%; margin: auto;">
+      These jobs are currently open for review:
+    </h1>
+    <div
+      class="box" id="yesJobs"
+      style="padding: 1.5rem; width: 75%; margin: auto; margin-top: 1rem; margin-bottom: 2rem; background: #FBEF95;"
+    >
+      {% for job in jobData["Inactive"] %}
+        {% if not job["Completed"] %}
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                {{ job["Job Name"] }}
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                  {{ job["Job Description"] }}
+                  <br />
+                  <br>
+                  <h4>Posted: {{ job["Availability"]["Date Created"].strftime("%d/%m/%y") }}</h4>
+                  <footer class="card-footer">
+                    <p class="card-footer-item">
+                      <span>
+                        <a class="navbar-item" href="{{ url_for('jobDetails.jobDetails', id=job['_id']) }}">View Job</a>
+                      </span>
+                    </p>
+                  </footer>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+</section>
+{% endif %}
+{% endblock %}

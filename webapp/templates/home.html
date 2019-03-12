@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock %} {% block content
+%}
+<section class="hero is-link">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1
+        class="title is-1"
+        style="color: #455466; font-family: Montserrat; font-size: 100px"
+      >
+        See V
+      </h1>
+      <h2 class="subtitle is-2" style="color: #98A2AF; font-family: Montserrat">
+        An automatic online applicant evaluation system.
+      </h2>
+    </div>
+  </div>
+</section>
+<section>
+  <br />
+  <nav class="level" style="margin-top: 1.3rem;">
+    <div class="level-item has-text-centered" >
+      <div>
+        <p class="heading">Already made an application?</p>
+        <br />
+        <a class="button is-info" href="{{ url_for('login.auth') }}">
+          <strong>Candidate Log-in</strong>
+        </a>
+      </div>
+    </div>
+    <div class="level-item has-text-centered" >
+      <div>
+        <p class="heading">Already an Employee?</p>
+        <br />
+        <a class="button is-info" href="{{ url_for('loginClient.login') }}">
+          <strong>Client Log-in</strong>
+        </a>
+      </div>
+    </div>
+  </nav>
+</section>
+{% endblock %}

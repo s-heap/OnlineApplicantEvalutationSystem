@@ -1,0 +1,81 @@
+{% extends 'base.html' %} {% block title %} Application {% endblock %} {% block
+content %}
+<br />
+<h1 style="font-size: 2em; padding-left: 3rem;">
+  Your applicaiton for {{ applicationData["Job"]["Job Name"] }}:
+</h1>
+<div
+  class="box"
+  style="padding: 1.5rem; width: 75%; margin: auto; margin-top: 1rem; margin-bottom: 2rem; background: #FBEF95;"
+>
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        {{ applicationData["Job"]["Job Name"] }}
+      </p>
+      <a href="#" class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </a>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{ applicationData["Job"]["Job Description"] }}
+        <br />
+        <br />
+        <h4>
+          Posted:
+          {{
+            applicationData["Job"]["Availability"]["Date Created"].strftime(
+              "%d/%m/%y"
+            )
+          }}
+        </h4>
+        <h4>
+          Closes:
+          {{
+            applicationData["Job"]["Availability"]["End Date"].strftime(
+              "%d/%m/%y"
+            )
+          }}
+        </h4>
+      </div>
+      <br />
+      <div class="content">
+        Literacy: {{ applicationData["Test Results"]["Literacy"] }}
+        <br />
+        Numeracy: {{ applicationData["Test Results"]["Numeracy"] }}
+        <br />
+        Technical: {{ applicationData["Test Results"]["Technical"] }}
+        <br />
+        Community Contribution:
+        {{ applicationData["Test Results"]["Community Contribution"] }}
+      </div>
+      <div class="content">
+        <div id="myDiv"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  data = [{
+  type: 'scatterpolar',
+  r: [{{ applicationData["Test Results"]["Literacy"] }}, {{ applicationData["Test Results"]["Numeracy"] }}, {{ applicationData["Test Results"]["Technical"] }}, {{ applicationData["Test Results"]["Community Contribution"] }}],
+  theta: ['Literacy','Numeracy', 'Technical', 'Community Contribution'],
+  fill: 'toself'
+  }]
+
+  layout = {
+  polar: {
+    radialaxis: {
+      visible: true,
+      range: [0, 100]
+    }
+  },
+  showlegend: false
+  }
+
+  Plotly.plot("myDiv", data, layout, {showSendToCloud: false})
+</script>
+{% endblock %}

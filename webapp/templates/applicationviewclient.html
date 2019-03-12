@@ -1,0 +1,189 @@
+{% extends 'base.html' %} {% block title %} Application {% endblock %} {% block
+content %}
+<br />
+<h1 style="font-size: 2em; padding-left: 3rem;">
+  Reviewing {{ applicationData["Candidate"]["CVData"]["Name"] }} for the
+  position of {{ applicationData["Job"]["Job Name"] }}:
+</h1>
+<div
+  class="box"
+  style="padding: 1.5rem; width: 75%; margin: auto; margin-top: 1rem; margin-bottom: 2rem; background: #FBEF95;"
+>
+  <div class="content is-size-4 has-text-centered mb1">
+    <u>{{ applicationData["Candidate"]["CVData"]["Name"] }}</u>
+  </div>
+  <div class="card mb1">
+    <header class="card-header">
+      <p class="card-header-title">
+        Education History:
+      </p>
+    </header>
+    <div class="card-content">
+      <strong>University Attended:</strong>
+      {{ applicationData["Candidate"]["CVData"]["University Attended"] }} <br />
+      <strong>Degree Qualification</strong>
+      {{ applicationData["Candidate"]["CVData"]["Degree Qualification"] }}
+      {{ applicationData["Candidate"]["CVData"]["Degree Level"] }}<br />
+      <strong>A Levels:</strong> <br />
+      <ul class="listDisc pl2">
+        {% for i in applicationData["Candidate"]["CVData"]["A-Level
+        Qualifications"] %}
+        <li>{{ i["Subject"] + ":" }} {{ i["Grade"] }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <footer class="card-footer">
+      <br />
+    </footer>
+  </div>
+  <div class="card mb1">
+    <header class="card-header">
+      <p class="card-header-title">
+        Programming Languages Known:
+      </p>
+    </header>
+    <div class="card-content">
+      <ul class="listDisc pl2">
+        {% for i in applicationData["Candidate"]["CVData"]["Languages Known"] %}
+        <li>
+          <strong>{{ i["Language"] + ":" }}</strong> {{ i["Expertise"] }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <footer class="card-footer">
+      <br />
+    </footer>
+  </div>
+  <div class="card mb1">
+    <header class="card-header">
+      <p class="card-header-title">
+        Other Skills:
+      </p>
+    </header>
+    <div class="card-content">
+      <ul class="listDisc pl2">
+        {% for i in applicationData["Candidate"]["CVData"]["Skills"] %}
+        <li>
+          <strong>{{ i["Skill"] + ":" }}</strong> {{ i["Expertise"] }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <footer class="card-footer">
+      <br />
+    </footer>
+  </div>
+  <div class="card mb1">
+    <header class="card-header">
+      <p class="card-header-title">
+        Employment History:
+      </p>
+    </header>
+    <div class="card-content">
+      <ul class="listDisc pl2">
+        {% for i in applicationData["Candidate"]["CVData"]["Previous
+        Employment"] %}
+        <li>
+          <strong>{{ i["Company"] + ":" }}</strong
+          >&nbsp&nbsp&nbsp&nbsp&nbsp{{ i["Position"] }} ({{
+            i["Length of Employment"]
+          }})
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <footer class="card-footer">
+      <br />
+    </footer>
+  </div>
+  <div class="card mb1">
+    <header class="card-header">
+      <p class="card-header-title">
+        Hobbies:
+      </p>
+    </header>
+    <div class="card-content">
+      <ul class="listDisc pl2">
+        {% for i in applicationData["Candidate"]["CVData"]["Hobbies"] %}
+        <li>
+          <strong>{{ i["Name"] + ":" }}</strong> {{ i["Interest"] }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <footer class="card-footer">
+      <br />
+    </footer>
+  </div>
+  <div
+    class="box"
+    style="width:67%; margin:auto;background:#ffffff; border:solid; border-width:0.2rem; border-color: #98a2af"
+  >
+    <div class="content">
+      <div id="languageRadar"></div>
+    </div>
+  </div>
+  <div
+    class="box"
+    style="width:67%; margin:auto;background:#ffffff; border:solid; border-width:0.2rem; border-color: #98a2af"
+  >
+    Test Questions Results:
+    <div class="content">
+      <div class="content">
+        <div id="questionRadar"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    data = [{
+    type: 'scatterpolar',
+    r: [{{ applicationData["Test Results"]["Literacy"] }}, {{ applicationData["Test Results"]["Numeracy"] }}, {{ applicationData["Test Results"]["Technical"] }}, {{ applicationData["Test Results"]["Community Contribution"] }}],
+    theta: ['Literacy','Numeracy', 'Technical', 'Community Contribution'],
+    fill: 'toself'
+    }]
+
+    layout = {
+    polar: {
+      radialaxis: {
+        visible: true,
+        range: [0, 100]
+      }
+    },
+    showlegend: false
+    }
+
+    Plotly.plot("questionRadar", data, layout, {showSendToCloud: false})
+  </script>
+  <script>
+    data = [
+      {
+      type: 'scatterpolar',
+      r: {{ applicationData["Radar"]["Languages Known"]["Candidate Languages"] }},
+      theta: [{% for i in applicationData["Radar"]["Languages Known"]["Keys"] %}'{{ i }}', {% endfor %}],
+      fill: 'toself',
+      name: 'Candidate Skills'
+      },
+      {
+      type: 'scatterpolar',
+      r: {{ applicationData["Radar"]["Languages Known"]["Job Languages"] }},
+      theta: [{% for i in applicationData["Radar"]["Languages Known"]["Keys"] %}'{{ i }}', {% endfor %}],
+      fill: 'toself',
+      name: 'Skills requested'
+      }
+    ]
+
+    layout = {
+      polar: {
+        radialaxis: {
+          visible: true,
+          range: [0, 10]
+        }
+      }
+    }
+
+    Plotly.plot("languageRadar", data, layout)
+  </script>
+
+  {% endblock %}
+</div>

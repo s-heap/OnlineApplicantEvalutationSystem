@@ -1,0 +1,318 @@
+{% extends 'base.html' %} {% block title %} Your Details {% endblock %}
+{% block header %}
+<script
+  src="{{ url_for('static', filename='details.js') }}"
+  type="text/javascript"
+></script>
+{% endblock %}
+{% block
+content %}
+<div class="form-group fieldGroupCopy" style="display: none;">
+  <div class="card" style="margin-top:1rem;">
+    <div class="input-group">
+      <input
+        type="text"
+        name="company[]"
+        class="input"
+        placeholder="Company Name"
+        required
+        />
+      <select name="position[]" class="input">
+        {% for pos in dropDowns["Previous Employment Position"] %}
+        <option value="{{ pos }}">{{ pos }}</option>
+        {% endfor %}
+      </select>
+      <input
+        type="number"
+        name="jobyears[]"
+        class="input"
+        placeholder="Years"
+        required
+        />
+      <input
+        type="number"
+        name="jobmonths[]"
+        class="input"
+        placeholder="Months"
+        required
+        />
+      <div class="input-group-addon">
+        <a href="javascript:void(0)" class="button is-fullwidth is-light remove"
+          ><span
+          class="glyphicon glyphicon glyphicon-remove"
+          aria-hidden="true"
+          ></span>
+        Remove This Role</a
+          >
+      </div>
+    </div>
+  </div>
+</div>
+<section>
+  <p
+    class="heading is-large"
+    style="text-align: center; font-size: 2rem; padding: 1rem; float:bottom;"
+    >
+    Add Your Details
+  </p>
+  <form method="post">
+    <div
+      class="box"
+      style="padding: 1.5rem; width: 67%; height:100%;margin: auto; background-color: #FBEF95;"
+      >
+    <h1 class="has-text-centered">Please complete this form so we can store your employment and education history. <br> You can then apply for jobs, and this is the that will be considered.</h1>
+    <br />
+    <div class="field">
+      Email (optional):
+      <p class="control has-icons-left">
+        {% if "CVData" in  dropDowns.keys() %}
+        <input class="input" type="email" placeholder="Email" id="email" name="email" value='{{ dropDowns["CVData"]["Email"] }}'>
+        {% else %}
+        <input class="input" type="email" placeholder="Email" id="email" name="email">
+        {% endif %}
+        <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+        </span>
+      </p>
+    </div>
+    <div class="field">
+      Your Name:
+      <p class="control has-icons-left">
+        {% if "CVData" in  dropDowns.keys() %}
+        <input class="input" type="text" placeholder="Full Name" id="name" name="name" value='{{ dropDowns["CVData"]["Name"] }}'>
+        {% else %}
+        <input class="input" type="text" placeholder="Full Name" id="name" name="name">
+        {% endif %}
+        <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+        </span>
+      </p>
+    </div>
+    <div class="field">
+      Your Github Username:
+      <p class="control has-icons-left">
+        {% if "CVData" in  dropDowns.keys() %}
+        <input class="input" type="text" placeholder="Github Username" id="Github Username" name="Github Username" value='{{ dropDowns["CVData"]["Github Username"] }}'>
+        {% else %}
+        <input class="input" type="text" placeholder="Github Username" id="Github Username" name="Github Username">
+        {% endif %}
+        <span class="icon is-small is-left">
+        <i class="fab fa-github"></i>
+        </span>
+      </p>
+    </div>
+    <div class="field">
+      University Attended:
+      <div class="control">
+        <div class="select">
+          <select name="university" id="university" onchange='checkUniversity(this.value);'>
+            {% if "CVData" in  dropDowns.keys() %}
+            <option value='{{ dropDowns["CVData"]["University Attended"] }}' hidden>{{ dropDowns["CVData"]["University Attended"] }}</option>
+            {% else %}
+            <option value="" hidden>Select a University</option>
+            {% endif %}
+            {% for uni in dropDowns["University Attended"] %}
+            <option value="{{ uni }}">{{ uni }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field" style="margin-top: 1rem;">
+      Degree Qualification:
+      <div class="control">
+        <div class="select">
+          <select name="degree" id="degree" onchange='checkDegree(this.value);'>
+            {% if "CVData" in  dropDowns.keys() %}
+            <option value='{{ dropDowns["CVData"]["Degree Qualification"] }}' hidden>{{ dropDowns["CVData"]["Degree Qualification"] }}</option>
+            {% else %}
+            <option value="" hidden>Select a Degree</option>
+            {% endif %}
+            {% for degree in dropDowns["Degree Qualification"]%}
+            <option value="{{ degree }}">{{ degree }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field" style="margin-top: 1rem;">
+      Degree Level:
+      <div class="control">
+        <div class="select">
+          <select name="degreeLevel" id="degreeLevel">
+            {% if "CVData" in  dropDowns.keys() %}
+            <option value='{{ dropDowns["CVData"]["Degree Level"] }}' hidden>{{ dropDowns["CVData"]["Degree Level"] }}</option>
+            {% else %}
+            <option value="" hidden>Select a Level</option>
+            {% endif %}
+            <option value="1st">1st</option>
+            <option value="2:1">2:1</option>
+            <option value="2:2">2:2</option>
+            <option value="3rd">3rd</option>
+            <option value="Pass">Pass</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field" style="margin-top: 1rem;">
+      Previous Employment:
+      <div class="control">
+        <div class="form-group fieldGroup">
+          <div class="card">
+            <div class="input-group">
+              <div class="input-group-addon" style="text-align: right;">
+                <a href="javascript:void(0)" class="button is-light is-fullwidth addMore"
+                  ><span
+                  class="glyphicon glyphicon glyphicon-plus"
+                  aria-hidden="true"
+                  ></span>
+                Add A Role</a
+                  >
+              </div>
+            </div>
+          </div>
+          {% if "CVData" in  dropDowns.keys() %}
+          {% for employment in dropDowns["CVData"]["Previous Employment"] %}
+          <script>
+            createEmployment('{{ employment["Position"] }}', '{{ employment["Company"] }}', '{{ employment["Years"] }}', '{{ employment["Months"] }}');
+          </script>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="control">
+    <div class="field" style="margin-top: 1rem;">
+      A-Level Qualifications:
+      <p>
+      <ul style="list-style-type:disc; padding-left:3rem;">
+        <li>Please add the letter grade you achieved in each A-Level in the text box that appears, e.g. A*, A-F, U etc.</li>
+        <li>N.B: You may have to scroll to see every A-Level you have added if you have many.</li>
+      </ul>
+      </p>
+      <div class="control" style="margin-top:1rem;">
+        <div class="select is-fullwidth">
+          <select name="aLevel" id="aLevel" onchange='checkALevel(this.value, "F");'>
+            <option value="" hidden>Select an A-Level</option>
+            {% for aLevel in dropDowns["A-Level Qualifications"]%}
+            <option value="{{ aLevel }}">{{ aLevel }}</option>
+            {% endfor %}
+          </select>
+          <div class="field box" id="aLevelContainer" style="padding-left: 1rem;margin-top:0.2rem; height: 12rem; overflow:scroll;"/>
+            {% if "CVData" in  dropDowns.keys() %}
+            {% for qual in dropDowns["CVData"]["A-Level Qualifications"] %}
+            <script>
+              checkALevel('{{ qual["Subject"] }}', '{{ qual["Grade"] }}');
+            </script>
+            {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control">
+    <div class="field" style="margin-top: 13rem;">
+      Languages Known:
+      <p>
+      <ul style="list-style-type:disc; padding-left:3rem;">
+        <li>Please select your ability in each language out of 10.</li>
+        <li>N.B: You may have to scroll to see every language you have added if you have many.</li>
+      </ul>
+      </p>
+      <div class="control" style="margin-top:1rem;">
+        <div class="select is-fullwidth">
+          <select name="language" id="language" onchange='checkLanguage(this.value, 0);'>
+            <option value="" hidden>Select a Language</option>
+            {% for language in dropDowns["Languages Known"]%}
+            <option value="{{ language }}">{{ language }}</option>
+            {% endfor %}
+          </select>
+          <div class="field box" id="languageContainer" style="padding-left: 1rem;margin-top:0.2rem; height: 12rem; overflow:scroll;"/>
+            {% if "CVData" in  dropDowns.keys() %}
+            {% for language in dropDowns["CVData"]["Languages Known"] %}
+            <script>
+              checkLanguage('{{ language["Language"] }}', '{{ language["Expertise"] }}');
+            </script>
+            {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control">
+    <div class="field" style="margin-top: 13rem;">
+      Skills:
+      <p>
+      <ul style="list-style-type:disc; padding-left:3rem;">
+        <li>Please select your ability in each skill out of 10.</li>
+        <li>N.B: You may have to scroll to see every skill you have added if you have many.</li>
+      </ul>
+      </p>
+      <div class="control" style="margin-top:1rem;">
+        <div class="select is-fullwidth">
+          <select name="skill" id="skill" onchange='checkSkill(this.value, 0);'>
+            <option value="" hidden>Select a Skill</option>
+            {% for skill in dropDowns["Skills"]%}
+            <option value="{{ skill }}">{{ skill }}</option>
+            {% endfor %}
+          </select>
+          <div class="field box" id="skillContainer" style="padding-left: 1rem;margin-top:0.2rem; height: 12rem; overflow:scroll;"/>
+            {% if "CVData" in  dropDowns.keys() %}
+            {% for skill in dropDowns["CVData"]["Skills"] %}
+            <script>
+              checkSkill('{{ skill["Skill"] }}', '{{ skill["Expertise"] }}');
+            </script>
+            {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control">
+      <div class="field" style="margin-top: 13rem;">
+        Hobbies:
+        <p>
+        <ul style="list-style-type:disc; padding-left:3rem;">
+          <li>Please select your interest in each hobby out of 10.</li>
+          <li>N.B: You may have to scroll to see every hobby you have added if you have many.</li>
+        </ul>
+        </p>
+        <div class="control" style="margin-top:1rem;">
+          <script>
+
+          </script>
+          <div class="select is-fullwidth">
+            <select name="hobby" id="hobby" onchange='checkHobby(this.value, 0);'>
+              <option value="" hidden>Select a Hobby</option>
+              {% for hobby in dropDowns["Hobbies"]%}
+              <option value="{{ hobby }}">{{ hobby }}</option>
+              {% endfor %}
+            </select>
+            <div class="field box" id="hobbyContainer" style="padding-left: 1rem;margin-top:0.2rem; height: 12rem; overflow:scroll;"/>
+              {% if "CVData" in  dropDowns.keys() %}
+              {% for hobby in dropDowns["CVData"]["Hobbies"] %}
+              <script>
+                checkHobby('{{ hobby["Name"] }}', '{{ hobby["Interest"] }}');
+              </script>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <button
+          id="signUp"
+          class="button is-dark is-fullwidth"
+          type="submit"
+          style="padding-bottom:1rem; margin-top:13rem;"
+          >
+        Save Your Details
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+<section>
+  {% endblock %}
+</section>

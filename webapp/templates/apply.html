@@ -1,0 +1,149 @@
+{% extends 'base.html' %} {% block title %} Apply To A Job {% endblock %} {%
+block header %}
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='apply.js') }}"
+></script>
+{% endblock %} {% block content %}
+<br />
+<section class="pl3">
+  <br />
+  <h1 class="is-size-3">
+    You are applying for the role of: <u>{{ request.args.get("name") }}</u>
+  </h1>
+  <h2>
+    Here you will perform some short additional tests to determine your
+    suitability for the role.<br />
+    There are four categories of question. Please make sure you complete them
+    all.
+  </h2>
+  <br />
+  <div
+    class="box"
+    style="padding: 1.5rem; width: 67%; margin: auto; margin-bottom:3rem; border-style: solid; border-color: #FBEF95;"
+  >
+    <form action="{{ url_for('apply.submit') }}" method="post">
+      <input type="hidden" name="Job ID" value="{{ request.args.get('id') }}" />
+      <div class="tabs is-fullwidth is-boxed" id="tabs">
+        <ul>
+          <li class="is-active" id="numTab">
+            <a onclick="showNumeracy()">
+              <span>Numeracy</span>
+            </a>
+          </li>
+          <li id="litTab">
+            <a onclick="showLiteracy()">
+              <span>Literacy</span>
+            </a>
+          </li>
+          <li id="absTab">
+            <a onclick="showAR()">
+              <span>Abastract Reasoning</span>
+            </a>
+          </li>
+          <li id="sitTab">
+            <a onclick="showSJ()">
+              <span>Situational Judgement</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="tab-content">
+        <div class="is-active" id="numeracy">
+          <div class="content">
+            {% for question in questions["Numeracy"] %}
+            <!--
+                        <select class="select" name="NumeracyAnswer[]" style="padding-left:1rem; height:3rem;width:10rem;font-size:1rem;">
+                            {% for answer in question["Answers"] %}
+                            <option value="{{ answer }}">{{ answer }}</option>
+                            {% endfor %}
+                        </select><br>
+                    -->
+            <div class="control" style="font-size:1.2rem;">
+              <u>{{ question["Question Text"] }}?</u><br />
+            </div>
+            <div class="control" style="padding-left:1rem;">
+              <ul>
+                {% set outer_loop = loop %} {% for answer in question["Answers"]
+                %}
+                <li>
+                  <input
+                    type="radio"
+                    name="NumeracyAnswer[]{{ outer_loop.index }}"
+                    value="{{ answer }}"
+                  />
+                  {{ answer }}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <input
+              type="hidden"
+              name="NumeracyID[]"
+              value="{{ question['_id'] }}"
+            />
+            <br />
+            {% endfor %}
+          </div>
+        </div>
+        <div id="literacy" style="display: none;">
+          <div class="content">
+            {% for question in questions["Literacy"] %}
+            <hr />
+            <div style="text-align:center">
+              "{{ question["Question Text"] }}"
+            </div>
+            <br />
+            <div class="control" style="font-size:1.2rem;">
+              <u>Is the last sentence of this paragraph True or False?</u>
+            </div>
+            <div class="control" style="padding-left:2rem;">
+              <ol type="a">
+                {% set outer_loop = loop %} {% for answer in question["Answers"]
+                %}
+                <li>
+                  <input
+                    type="radio"
+                    name="LiteracyAnswer[]{{ outer_loop.index }}"
+                    value="{{ answer }}"
+                  />
+                  {{ answer }}
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            <input
+              type="hidden"
+              name="LiteracyID[]"
+              value="{{ question['_id'] }}"
+            />
+            {% endfor %}
+          </div>
+        </div>
+        <div id="abstract" style="display: none;"></div>
+        <div id="situational" style="display: none;"></div>
+      </div>
+      <hr />
+      <div class="control">
+        <div class="control" id="next" style="text-align:right">
+          <button
+            type="button"
+            class="button is-light"
+            onclick="nextOrSubmit()"
+          >
+            Next Category
+          </button>
+        </div>
+        <div id="submit" style="display:none; text-align:right">
+          <input
+            type="submit"
+            name="submit"
+            class="button is-dark"
+            value="Submit"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

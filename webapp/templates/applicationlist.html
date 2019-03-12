@@ -1,0 +1,116 @@
+{% extends 'base.html' %} {% block title %} Application List {% endblock %}
+{% block content %}
+<section>
+    <div class="container" style="padding-top: 1.5rem; padding-bottom: 1.5rem;margin: auto; width:75%;">
+        <div class="card" style="overflow:hidden;">
+            <div class="card-content">
+                <figure class="image" style="float: left; padding-bottom: 1.5rem; margin-right: 1.5rem;">
+                  <img src="{{ url_for('static', filename='user-tie.png') }}" height=150px width=150px alt="An icon of a person with a tie">
+                </figure>
+            </div>
+            <header class="card-header">
+              <p class="card-header-title" style="background: #98A2AF; text-color: #ffffff; float:right;">
+                  <strong>{{ g.user["Username"] }}</strong>
+              </p>
+            </header>
+            <div class="card-content" id="aLCC" style="text-align:left;">
+                <nav class="level">
+                    <div class="level-left">
+                      <div class="content"style="padding-bottom: 1rem; text-align: justify">
+                        You are currently applying for <strong>{{applications["Active"]|length + applications["Inactive"]|length}}</strong> jobs.
+                        <br />
+                        You have applied for <strong>{{applications["Active"]|length + applications["Inactive"]|length + applications["Completed"]|length}}</strong> jobs historically.
+                      </div>
+                    </div>
+                    <div class="level-right">
+                        <div class="container" style="width:75%; float:right; padding-top:1rem; padding-bottom:1rem">
+                            <a class="button is-primary" href="{{ url_for('joblist.joblist') }}">
+                              <strong>Apply for a Job</strong>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h1 style="font-size: 2em; width: 75%; margin: auto;">
+      These jobs are still open for application:
+    </h1>
+    {% if applications["Active"] %}
+      <div
+        class="box" id="yesJobs"
+        style="padding: 1.5rem; width: 75%; margin: auto; margin-top: 1rem; margin-bottom: 2rem; background: #FBEF95;"
+      >
+        {% for application in applications["Active"] %}
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              {{ application["Job Data"]["Job Name"] }}
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              {{ application["Job Data"]["Job Description"] }}
+              <br />
+              <br>
+              <h4>Posted: {{ application["Job Data"]["Availability"]["Date Created"].strftime("%d/%m/%y") }}</h4>
+            </div>
+            <footer class="card-footer">
+              <p class="card-footer-item">
+                <span>
+                  <a class="navbar-item" href="{{ url_for('applicationview.applicationview', id=application['_id']) }}">View Application</a>
+                </span>
+              </p>
+            </footer>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+        <div class="container" style="width:75%; text-align: center; padding-top:1rem;">
+            You do not have any live applications.
+        </div>
+    {% endif %}
+</section>
+
+{% if applications["Inactive"] %}
+  <section>
+      <h1 style="font-size: 2em; width: 75%; margin: auto;">
+        These applications are currently being reviewed:
+      </h1>
+      <div
+        class="box" id="yesJobs"
+        style="padding: 1.5rem; width: 75%; margin: auto; margin-top: 1rem; margin-bottom: 2rem; background: #FBEF95;"
+      >
+        {% for application in applications["Inactive"] %}
+          {% if not application["Inactive"]["Job Data"]["Completed"] %}
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  {{ application["Inactive"]["Job Data"]["Job Name"] }}
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  {{ application["Inactive"]["Job Data"]["Job Description"] }}
+                  <br />
+                  <br>
+                  <h4>Posted: {{ application["Inactive"]["Job Data"]["Availability"]["Date Created"].strftime("%d/%m/%y") }}</h4>
+                </div>
+                <footer class="card-footer">
+                  <p class="card-footer-item">
+                    <span>
+                      <a class="navbar-item" href="{{ url_for('applicationview.applicationview', id=application['_id']) }}">View Application</a>
+                    </span>
+                  </p>
+                </footer>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+  </section>
+{% endif %}
+{% endblock %}
